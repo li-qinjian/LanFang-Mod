@@ -1,0 +1,330 @@
+﻿japanese={
+	color= hsv{ 0 0 90 }
+	religion = mahayana
+	heritage = heritage_japanese
+	language = language_japanese
+	traditions = { }
+	name_format = last_first
+	male_common_first_names = {
+		Aritomo
+		Gentaro
+		Gonnohyoe
+		Goro
+		Hayao
+		Heihachiro
+		Hikonojo
+		Hiroshi
+		Hyoe
+		Iwao
+		Jinzaburo
+		Jiro
+		Kageaki
+		Kagenori
+		Kantaro
+		Kazushige
+		Keisuke
+		Kenkichi
+		Kiyotaka
+		Koichiro
+		Kozo
+		Kuranosuke
+		Maresuke
+		Masatake
+		Masujiro
+		Michisura
+		Mineo
+		Mitsue
+		Mitsuomi
+		Nariaki
+		Nobuyoshi
+		Rokuro
+		Sadao
+		Samata
+		Shichiro
+		Shigeru
+		Shigeto
+		Shinsaku
+		Shoin
+		Soroku
+		Sotokichi
+		Sukenori
+		Sukeyuki
+		Sumiyoshi
+		Tadakuni
+		Takamori
+		Takayoshi
+		Takeaki
+		Tamemoto
+		Taro
+		Tetsutaro
+		Tomasaburo
+		Tomonosuke
+		Toshimichi
+		Toshiyoshi
+		Tsugumichi
+		Yahachi
+		Yasukata
+		Yasuyoshi
+		Yoshifuru
+		Yoshika
+		Yoshimichi
+		Yoshinori
+		Yusaku
+		JNI_M_Arinori JNI_M_Chojiro JNI_M_Chusaburo JNI_M_Eiichi JNI_M_Gengo 
+		JNI_M_Hachiro JNI_M_Hajime JNI_M_Hanpeita JNI_M_Heisuke JNI_M_Hirobumi 
+		JNI_M_Hisanao JNI_M_Ikunosuke JNI_M_Isami JNI_M_Issei JNI_M_Izo 
+		JNI_M_Jurota JNI_M_Jutaro JNI_M_Juutaro JNI_M_Kanzo JNI_M_Keisuke 
+		JNI_M_Keisuke_2 JNI_M_Kenkichi JNI_M_Kimimasa JNI_M_Kinjiro JNI_M_Kogoro 
+		JNI_M_Koshiro JNI_M_Kunimoto JNI_M_Kurata JNI_M_Masaharu JNI_M_Masahiro 
+		JNI_M_Masakuni JNI_M_Masanosuke JNI_M_Masayoshi JNI_M_Michitake JNI_M_Motojiro 
+		JNI_M_Munemitsu JNI_M_Munenori JNI_M_Nagakuni JNI_M_Nagayuki JNI_M_Naoe 
+		JNI_M_Naofumi JNI_M_Naoharu JNI_M_Naonori JNI_M_Naoyuki JNI_M_Nobumasa 
+		JNI_M_Nobuo JNI_M_Nobutake JNI_M_Nobuyoshi JNI_M_Noriyoshi JNI_M_Ryoma 
+		JNI_M_Sadakichi JNI_M_Sakichi JNI_M_Saneomi JNI_M_Sanosuke JNI_M_Seiichiro 
+		JNI_M_Shigenobu JNI_M_Shinpachi JNI_M_Shinpei JNI_M_Shinsuke JNI_M_Shintaro 
+		JNI_M_Shiro JNI_M_Shojiro JNI_M_Shusaku JNI_M_Shuzo JNI_M_Soji 
+		JNI_M_Tadamasa JNI_M_Tadanao JNI_M_Tadasaburo JNI_M_Taneomi JNI_M_Tomoatsu 
+		JNI_M_Tomozane JNI_M_Torataro JNI_M_Toshiaki JNI_M_Toshizo JNI_M_Tota 
+		JNI_M_Tsugunosuke JNI_M_Umanosuke JNI_M_Yaichiro JNI_M_Yajiro JNI_M_Yasumasa 
+		JNI_M_Yataro JNI_M_Yoshimasa JNI_M_Yoshitake JNI_M_Yukichi 
+	}
+	female_common_first_names = {
+		Kei
+		Miki
+		Nobu
+		Teru
+		JNI_F_Atsu JNI_F_Chika JNI_F_Chizuru JNI_F_Den JNI_F_Ei 
+		JNI_F_Fude JNI_F_Fuji JNI_F_Fuku JNI_F_Fumi JNI_F_Futaba 
+		JNI_F_Gin JNI_F_Haru JNI_F_Hide JNI_F_Hisa JNI_F_Ichi 
+		JNI_F_Iku JNI_F_Ine JNI_F_Io JNI_F_Iso JNI_F_Ito 
+		JNI_F_Iwa JNI_F_Iyo JNI_F_Kaji JNI_F_Kame JNI_F_Kane 
+		JNI_F_Katsu JNI_F_Kayo JNI_F_Kichi JNI_F_Kiku JNI_F_Kinu 
+		JNI_F_Kiyo JNI_F_Koto JNI_F_Kuma JNI_F_Kuni JNI_F_Masa 
+		JNI_F_Masu JNI_F_Matsu JNI_F_Mine JNI_F_Mitsu JNI_F_Miya 
+		JNI_F_Miyo JNI_F_Moto JNI_F_Nao JNI_F_Otome JNI_F_Ren 
+		JNI_F_Rin JNI_F_Rui JNI_F_Ryo JNI_F_Sachi JNI_F_Sada 
+		JNI_F_Saki JNI_F_Saku JNI_F_Sana JNI_F_Sen JNI_F_Setsu 
+		JNI_F_Shizu JNI_F_Sono JNI_F_Suga JNI_F_Taka JNI_F_Take 
+		JNI_F_Taki JNI_F_Tami JNI_F_Tane JNI_F_Tase JNI_F_Tatsu 
+		JNI_F_Toku JNI_F_Tome JNI_F_Tomi JNI_F_Tora JNI_F_Tose 
+		JNI_F_Toyo JNI_F_Tsune JNI_F_Tsuru JNI_F_Tsuyu JNI_F_Ume 
+		JNI_F_Uta JNI_F_Yae JNI_F_Yao JNI_F_Yaso JNI_F_Yasu 
+		JNI_F_Yoshi JNI_F_Yuki JNI_F_Yu 
+	}	
+	noble_last_names = {
+		Ito
+		Katsura
+		Kido
+		Matsudaira
+		Makino
+		Mizuno
+		Mori
+		Nabeshima
+		Okubo
+		Saigo
+		Togo
+		JNI_Shimazu JNI_Iwakura JNI_Saionji JNI_Sanjo 
+		JNI_L_Abe JNI_L_Ando JNI_L_Honda JNI_L_Hotta JNI_L_Ii 
+		JNI_L_Itakura JNI_L_Manabe JNI_L_Matsudaira JNI_L_Sakai 
+	}
+	common_last_names = {
+		Akiyama
+		Araki
+		Arichi
+		Dewa
+		Enomoto
+		Hasegawa
+		Honjo
+		Ichinohe
+		Inoue
+		Itagaki
+		Kabayama
+		Kamimura
+		Kamio
+		Kataoka
+		Kato
+		Katsu
+		Kawakami
+		Kawamura
+		Kodama
+		Kuroda
+		Kuroki
+		Masaki
+		Minami
+		Muto
+		Nakamuta
+		Nire
+		Nogi
+		Nozu
+		Okada
+		Oku
+		Omura
+		Osumi
+		Oyama
+		Sakura
+		Sato
+		Shibayama
+		Shimamura
+		Shirakawa
+		Suzuki
+		Tachibana
+		Takashima
+		Takasugi
+		Terauchi
+		Tsuboi
+		Ueda
+		Uehara
+		Ugaki
+		Uryu
+		Yamagata
+		Yamakawa
+		Yamamoto
+		Yamashita
+		Yamaya
+		Yashiro
+		Yui
+		Oshio
+		Ogata
+		Egawa
+		Torii
+		Yoshida
+		Hayashi
+		JNI_L_Akamatsu JNI_L_Akashi JNI_L_Amano 
+		JNI_L_Aoki JNI_L_Arai JNI_L_Beppu JNI_L_Chiba JNI_L_Eto 
+		JNI_L_Fujita JNI_L_Fukushima JNI_L_Fukuzawa JNI_L_Godai JNI_L_Goto 
+		JNI_L_Hara JNI_L_Harada JNI_L_Hashimoto JNI_L_Hayashi JNI_L_Henmi 
+		JNI_L_Hijikata JNI_L_Hirosawa JNI_L_Hori 
+		JNI_L_Iba JNI_L_Ijichi JNI_L_Ijuin JNI_L_Ike 
+		JNI_L_Ikeda JNI_L_Ikegami JNI_L_Imai JNI_L_Inaba 
+		JNI_L_Ito JNI_L_Iwamura JNI_L_Iwasaki JNI_L_Iwase 
+		JNI_L_Jinbo JNI_L_Kaieda JNI_L_Kaneko JNI_L_Kawai JNI_L_Kawaji 
+		JNI_L_Kayano JNI_L_Kikkawa JNI_L_Kimura JNI_L_Kirino JNI_L_Kiyokawa 
+		JNI_L_Kobayashi JNI_L_Koga JNI_L_Kojima JNI_L_Komura JNI_L_Kondo 
+		JNI_L_Kono JNI_L_Kubota JNI_L_Kurimoto JNI_L_Kusaka JNI_L_Kuze 
+		JNI_L_Maebara JNI_L_Maejima JNI_L_Maki 
+		JNI_L_Matsukata JNI_L_Matsumoto JNI_L_Mori JNI_L_Mukunashi JNI_L_Murata 
+		JNI_L_Mutsu JNI_L_Nagakura JNI_L_Nagaoka JNI_L_Nagayama JNI_L_Naito 
+		JNI_L_Nakae JNI_L_Nakajima JNI_L_Nakamura JNI_L_Nakaoka JNI_L_Nagai 
+		JNI_L_Narayama JNI_L_Niijima JNI_L_Nishi JNI_L_Ogasawara JNI_L_Oguri 
+		JNI_L_Okazawa JNI_L_Oki JNI_L_Okita JNI_L_Oku JNI_L_Okuma 
+		JNI_L_Osako JNI_L_Oshima JNI_L_Ota JNI_L_Otani JNI_L_Otori 
+		JNI_L_Otsuki JNI_L_Saito JNI_L_Sakakibara JNI_L_Sakamoto 
+		JNI_L_Sakuma JNI_L_Sano JNI_L_Sasaki JNI_L_Serizawa JNI_L_Shiba 
+		JNI_L_Shibata JNI_L_Shibusawa JNI_L_Shima JNI_L_Shimada JNI_L_Shimizu 
+		JNI_L_Shinagawa JNI_L_Shingu JNI_L_Shinohara JNI_L_Soejima JNI_L_Soma 
+		JNI_L_Sufu JNI_L_Tadaki JNI_L_Takahashi JNI_L_Takasaki JNI_L_Takechi 
+		JNI_L_Takeda JNI_L_Takemoto JNI_L_Takenaka JNI_L_Takeuchi JNI_L_Tanaka 
+		JNI_L_Tani JNI_L_Tanuma JNI_L_Tatsumi JNI_L_Terashima JNI_L_Toda 
+		JNI_L_Todo JNI_L_Toyoda JNI_L_Tsuji JNI_L_Tsutsui 
+		JNI_L_Uchimura JNI_L_Wakisaka JNI_L_Watanabe JNI_L_Yamada JNI_L_Yamaguchi 
+		JNI_L_Yamaji JNI_L_Yamanami JNI_L_Yamaoka JNI_L_Yamazaki JNI_L_Yatabori 
+		JNI_L_Yoshii JNI_L_Yuri 
+	}
+	male_regal_first_names = {
+		Kotohito
+		Taruhito
+		Yoshinobu
+		JNI_M_Ieatsu JNI_M_Iehide JNI_M_Iehisa JNI_M_Iemasa JNI_M_Iemori JNI_M_Iemochi 
+		JNI_M_Iesada JNI_M_Iesato JNI_M_Ietaka JNI_M_Ietake JNI_M_Ieyori JNI_M_Ieyoshi 
+		JNI_M_Haruhito JNI_M_Kuniie JNI_M_Michihito JNI_M_Mutsuhito JNI_M_Takahito 
+		JNI_M_Takehito JNI_M_Teruhito JNI_M_Yorihito JNI_M_Yoshihito JNI_M_Yukihito 
+	}
+	regal_last_names = {
+		Kujo
+		Tokugawa
+		Arisugawa
+		Kanin
+		JNI_Fushimi JNI_Ichijo JNI_Konoe JNI_Nijo JNI_Takatsukasa 
+	}
+	ethnicities = {
+		1 = asian
+	}
+	graphics = east_asian
+}
+
+ainu={
+	color= hsv{ 0 0 0.5 }
+	religion = animist
+	heritage = heritage_ainu
+	language = language_ainu
+	traditions = { }
+	name_format = last_first
+	male_common_first_names = {
+		Menkakush
+		Munkeke
+		Shinriki
+		Isonash
+		Turushno
+		JNI_M_Akarakay JNI_M_Antaaynu JNI_M_Antukama JNI_M_Apita JNI_M_Asiri 
+		JNI_M_Atakun JNI_M_Cerama JNI_M_Cikniw JNI_M_Ciwehotapa JNI_M_Ciwere 
+		JNI_M_Ciwkenr JNI_M_Ciwkitu JNI_M_Ciyasikranke JNI_M_Ciyatkre JNI_M_Ekasimatak 
+		JNI_M_Ekasipa JNI_M_Ekasiwakka JNI_M_Ekurkunci JNI_M_Hacita JNI_M_Haerire 
+		JNI_M_Hanketosima JNI_M_Hemosite JNI_M_Hepenrek JNI_M_Hetocisi JNI_M_Hiyawsike 
+		JNI_M_Humataaynu JNI_M_Imaarey JNI_M_Isar JNI_M_Itakisiroma JNI_M_Iwasipi 
+		JNI_M_Kamuyre JNI_M_Kanetuaynu JNI_M_Kanikusiaynu JNI_M_Kannariki JNI_M_Kansiyawmante 
+		JNI_M_Kapusui JNI_M_Kimiyusaaynu JNI_M_Kimurakaaynu JNI_M_Konkama JNI_M_Konkitu 
+		JNI_M_Konore JNI_M_Kowenaw JNI_M_Kukaruk JNI_M_Kusankus JNI_M_Kusurmaita 
+		JNI_M_Kutunkur JNI_M_Makuwet JNI_M_Mawranaaynu JNI_M_Monokute JNI_M_Mumerki 
+		JNI_M_Nawepo JNI_M_Netkasa JNI_M_Nikekari JNI_M_Nimursit JNI_M_Nisenrus 
+		JNI_M_Nisiktaaynu JNI_M_Notekarima JNI_M_Noteksi JNI_M_Nukanuri JNI_M_Numutusma 
+		JNI_M_Penkukari JNI_M_Penriuk JNI_M_Ramante JNI_M_Ramranke JNI_M_Rasutamaka 
+		JNI_M_Rewekor JNI_M_Rikunriki JNI_M_Rituksi JNI_M_Sakitu JNI_M_Sankekur 
+		JNI_M_Satorki JNI_M_Sawahuniaynu JNI_M_Senroku JNI_M_Sianrek JNI_M_Sihuranma 
+		JNI_M_Sikari JNI_M_Sinkitu JNI_M_Sinkoksaaynu JNI_M_Sinum JNI_M_Siromaaynu 
+		JNI_M_Sirotmaaynu JNI_M_Sisikuray JNI_M_Sisratoka JNI_M_Sitkureran JNI_M_Siyusihoho 
+		JNI_M_Soitu JNI_M_Suirante JNI_M_Sukociwre JNI_M_Tecirki JNI_M_Torakot 
+		JNI_M_Torehire JNI_M_Toreusi JNI_M_Torkohar JNI_M_Tosiyanke JNI_M_Towono 
+		JNI_M_Towosiriha JNI_M_Towsaw JNI_M_Ukitu JNI_M_Uniski JNI_M_Uripito 
+		JNI_M_Usikante JNI_M_Usikantoy JNI_M_Utarokute JNI_M_Utokanaaynu JNI_M_Wehonoka 
+		JNI_M_Wenawohusi JNI_M_Wenisikoyuhu JNI_M_Wentoran JNI_M_Wentuk JNI_M_Werasanekur 
+		JNI_M_Wertosi JNI_M_Wesikahaya JNI_M_Wesiyoyure JNI_M_Wetponkur JNI_M_Wikis 
+		JNI_M_Wokera JNI_M_Wokiraw JNI_M_Womannen JNI_M_Wonkuy JNI_M_Wonowankur 
+		JNI_M_Wotanuka JNI_M_Yaenkur JNI_M_Yayomanekuh JNI_M_Yutormaka JNI_M_Yuwaram 
+	}
+	female_common_first_names = {
+		Imekanu
+		Tahkonanna
+		Keutoranke
+		JNI_F_Akatke JNI_F_Apenanka JNI_F_Atkaho JNI_F_Cine JNI_F_Cisinay 
+		JNI_F_Ciyarorikut JNI_F_Ciyarunhuwe JNI_F_Ciyorokaki JNI_F_Ekunrut JNI_F_Epesanke 
+		JNI_F_Erattatuke JNI_F_Har JNI_F_Hawtesiyura JNI_F_Hihutoki JNI_F_Hokimesike 
+		JNI_F_Honsiyotka JNI_F_Ici JNI_F_Iwanohekonoy JNI_F_Kahiki JNI_F_Kahoke 
+		JNI_F_Kaneyanki JNI_F_Kanite JNI_F_Karipa JNI_F_Karutrut JNI_F_Kaweray 
+		JNI_F_Kawranke JNI_F_Kenuya JNI_F_Kinarapuk JNI_F_Kosiyuhusimat JNI_F_Kusintane 
+		JNI_F_Mako JNI_F_Matekir JNI_F_Menraras JNI_F_Metokoros JNI_F_Misasimat 
+		JNI_F_Monasinouk JNI_F_More JNI_F_Nawkurus JNI_F_Nesociw JNI_F_Noyata 
+		JNI_F_Nuino JNI_F_Rapoksuma JNI_F_Rettuko JNI_F_Sanure JNI_F_Saonke 
+		JNI_F_Sayo JNI_F_Sefucis JNI_F_Seremakuwe JNI_F_Sicikaksi JNI_F_Siga 
+		JNI_F_Sige JNI_F_Sikator JNI_F_Sikenrut JNI_F_Sinociri JNI_F_Sintkore 
+		JNI_F_Sita JNI_F_Sitani JNI_F_Siyahari JNI_F_Siyorihake JNI_F_Siyoriw 
+		JNI_F_Siyurano JNI_F_Siyutmi JNI_F_Sunnaranki JNI_F_Sunot JNI_F_Supetawey 
+		JNI_F_Suranki JNI_F_Sutumuy JNI_F_Tasiranke JNI_F_Tatuy JNI_F_Tokisanmat 
+		JNI_F_Tora_2 JNI_F_Tukura JNI_F_Tupasutay JNI_F_Utoiki JNI_F_Wehuwekari 
+		JNI_F_Wekiciya JNI_F_Wemaka JNI_F_Wenkari JNI_F_Weranite JNI_F_Wetakama 
+		JNI_F_Wokonririkma JNI_F_Yapi JNI_F_Yasi JNI_F_Yawetori JNI_F_Yayoronu 
+		JNI_F_Yuki_2 
+	}	
+	noble_last_names = {
+		JNI_L_Ekasi JNI_L_Nispa JNI_L_Poronispa JNI_L_Sapanekur 
+	}
+	common_last_names={
+		JNI_L_Akam JNI_L_Amamsuke JNI_L_Aptapet JNI_L_Atkeusi JNI_L_Atsam 
+		JNI_L_Cipasir JNI_L_Ciroti JNI_L_Esausi JNI_L_Esausi JNI_L_Etuoroop 
+		JNI_L_Huranui JNI_L_Hurpira JNI_L_Ioci JNI_L_Iput JNI_L_Iskar 
+		JNI_L_Iwawnay JNI_L_Kamuykotan JNI_L_Kayaunpesh JNI_L_Kinasir JNI_L_Kumausi 
+		JNI_L_Kusunkotan JNI_L_Kusunnay JNI_L_Kutcaro JNI_L_Maske JNI_L_Menas 
+		JNI_L_Mopet JNI_L_Moruran JNI_L_Mukap JNI_L_Nayoro JNI_L_Nikap 
+		JNI_L_Nimuoro JNI_L_Noyausi JNI_L_Omu JNI_L_Otanay JNI_L_Piporo 
+		JNI_L_Piratur JNI_L_Pontukes JNI_L_Poronay JNI_L_Poropet JNI_L_Rikunpet 
+		JNI_L_Rironay JNI_L_Ruotak JNI_L_Sakkotan JNI_L_Samani JNI_L_Sar 
+		JNI_L_Satnay JNI_L_Satporopet JNI_L_Setanay JNI_L_Sikutut JNI_L_Simukap 
+		JNI_L_Sipet JNI_L_Sipicar JNI_L_Sirawoi JNI_L_Sirpet JNI_L_Sorapci 
+		JNI_L_Soya JNI_L_Sumaomai JNI_L_Susuka JNI_L_Tarayka JNI_L_Teso 
+		JNI_L_Tokapusi JNI_L_Tokor JNI_L_Tounnay JNI_L_Toya JNI_L_Urarpet 
+		JNI_L_Usor JNI_L_Usoro JNI_L_Yamkusnay JNI_L_Yuparo JNI_L_Yupet 
+	}
+	ethnicities = {
+		1 = circumpolar
+	}
+	graphics = east_asian
+}
