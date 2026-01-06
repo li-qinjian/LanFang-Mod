@@ -66,7 +66,7 @@ nanyang_migration.1 = {
 		# Find the incorporated state with highest migration pull in our country
 		ordered_scope_state = {
 			limit = {
-				is_incorporated = yes
+				is_split_state = no
 				is_coastal = yes
 				has_port = yes
 			}
@@ -83,68 +83,53 @@ nanyang_migration.1 = {
 		
 		trigger = {
 			exists = scope:han_source_state
-			exists = scope:han_destination_state		}
+			exists = scope:han_destination_state
+		}
 		
-		custom_tooltip = nanyang_migration_tooltip
-		
-		# Migrate unemployed Han population (including Hakka)
-		scope:han_source_state = {
-			random_scope_pop = {
-				limit = {
-					has_discrimination_trait = heritage_han
-					is_employed = no
-					OR = {
-						is_pop_type = laborers
-						is_pop_type = peasants
+		custom_tooltip = {
+			text = nanyang_migration_tooltip
+			
+			# Migrate unemployed Han population (including Hakka)
+			scope:han_source_state = {
+				ordered_scope_pop = {
+					limit = {
+						has_discrimination_trait = heritage_han
+						is_employed = no
+						OR = {
+							is_pop_type = laborers
+							is_pop_type = peasants
+						}
 					}
-				}
-				save_scope_as = migrant_pop
-				move_partial_pop = {
-					state = scope:han_destination_state
-					population = {
-						# Move at most 1% of destination state's population, max 3000, or pop size, whichever is smaller
-						add = scope:han_destination_state.state_population
-						multiply = 0.01
-						if = {
-							limit = {
-								scope:migrant_pop.pop_size >= 3000
+					save_scope_as = migrant_pop
+					order_by = total_size
+					position = 0
+					check_range_bounds = no
+					move_partial_pop = {
+						state = scope:han_destination_state
+						population = {
+							# Move at most 5% of destination state's population, max 3000, or pop size, whichever is smaller
+							add = scope:han_destination_state.state_population
+							multiply = 0.05
+							if = {
+								limit = {
+									scope:migrant_pop.pop_size >= 5000
+								}
+								max = 5000
 							}
-							max = 3000
-						}
-						else = {
-							max = scope:migrant_pop.pop_size
+							else = {
+								max = scope:migrant_pop.pop_size
+							}
 						}
 					}
 				}
 			}
 		}
-		
-		# Impact on relations with Han country
-		if = {
-			limit = {
-				scope:han_country = {
-					any_primary_culture = {
-						has_discrimination_trait = heritage_manchu
-					}
-				}
-			}
-			change_relations = {
-				country = scope:han_country
-				value = -5
-			}
-		}
-		else = {
-			change_relations = {
-				country = scope:han_country
-				value = 10
-			}
-		}
-		
+
 		ai_chance = {
 			base = 90
 		}
 	}
-	
+
 	# Option B: No available migrants or no suitable destination
 	option = {
 		name = nanyang_migration.1.c
