@@ -90,34 +90,37 @@ nanyang_migration.1 = {
 			text = nanyang_migration_tooltip
 			
 			# Migrate unemployed Han population (including Hakka)
-			scope:han_source_state = {
-				ordered_scope_pop = {
-					limit = {
-						has_discrimination_trait = heritage_han
-						is_employed = no
-						OR = {
-							is_pop_type = laborers
-							is_pop_type = peasants
-						}
-					}
-					save_scope_as = migrant_pop
-					order_by = total_size
-					position = 0
-					check_range_bounds = no
-					move_partial_pop = {
-						state = scope:han_destination_state
-						population = {
-							# Move at most 5% of destination state's population, max 3000, or pop size, whichever is smaller
-							add = scope:han_destination_state.state_population
-							multiply = 0.05
-							if = {
-								limit = {
-									scope:migrant_pop.pop_size >= 5000
-								}
-								max = 5000
+			# Execute in destination state context (similar to bleeding_kansas reference)
+			scope:han_destination_state = {
+				scope:han_source_state = {
+					ordered_scope_pop = {
+						limit = {
+							has_discrimination_trait = heritage_han
+							is_employed = no
+							OR = {
+								is_pop_type = laborers
+								is_pop_type = peasants
 							}
-							else = {
-								max = scope:migrant_pop.pop_size
+						}
+						save_scope_as = migrant_pop
+						order_by = total_size
+						position = 0
+						check_range_bounds = no
+						move_partial_pop = {
+							state = scope:han_destination_state
+							population = {
+								# Move at most 5% of destination state's population, max 5000, or pop size, whichever is smaller
+								add = scope:han_destination_state.state_population
+								multiply = 0.05
+								if = {
+									limit = {
+										scope:migrant_pop.total_size >= 5000
+									}
+									max = 5000
+								}
+								else = {
+									max = scope:migrant_pop.total_size
+								}
 							}
 						}
 					}
