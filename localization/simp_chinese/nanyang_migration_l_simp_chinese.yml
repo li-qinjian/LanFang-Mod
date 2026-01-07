@@ -1,9 +1,0 @@
-l_simp_chinese:
- # 事件1 - 南洋国家视角（下南洋）
- nanyang_migration.1.t:0 "招募华人移民"
- nanyang_migration.1.d:0 "在[SCOPE.sCountry('han_country').GetName]的[SCOPE.sState('han_source_state').GetName]，大量华人因失业而陷入困境。我们正在寻求劳动力发展国家，是否应该招募这些勤劳的华人同胞前来定居？"
- nanyang_migration.1.f:0 "下南洋，谋生计"
- nanyang_migration.1.a:0 "欢迎华人移民前来定居"
- nanyang_migration.1.c:0 "目前没有可用的移民来源"
- nanyang_migration_tooltip:0 "失业的华人劳工和农民将移民到[SCOPE.sState('han_destination_state').GetName]"
- 
