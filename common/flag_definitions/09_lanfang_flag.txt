@@ -1,4 +1,4 @@
-﻿LAN = { # Lanfang
+﻿REPLACE:LAN = { # Lanfang
 	flag_definition = {
 		coa = LAN
 		subject_canton = LAN

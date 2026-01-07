@@ -1,4 +1,4 @@
-﻿LAN = { # Lanfang
+﻿REPLACE:LAN = { # Lanfang
 	dynamic_country_name = { # Bo-Ni
 		name = dyn_c_boni
 		adjective = dyn_c_boni_adj
