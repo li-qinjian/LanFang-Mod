@@ -1,0 +1,8 @@
+﻿NPops = {
+	#MARKET_MIGRATION_MIN_POP_FRACTION_TO_MOVE = 0.01	# If the people wanting to migrate constitues less than this fraction of a pop, no new pop will be created and they won't migrate.
+	ALLOW_ASSIMILATION_REQUIRE_HERITAGE_GROUP = yes		# Can pops assimilate into pops of a different heritage group (weaker condition)
+}
+
+NCountry = {
+	INCORPORATION_TIME_NO_MATCH = 20				# Years if the state's Homeland cultures have nothing in common with the country's primary cultures
+}

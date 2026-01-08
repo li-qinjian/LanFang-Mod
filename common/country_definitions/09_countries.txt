@@ -1,0 +1,10 @@
+REPLACE:LAN = {
+	color = { 0  178  248 }
+
+	country_type = unrecognized
+
+	tier = kingdom
+
+	cultures = { hakka }
+	capital = STATE_WEST_BORNEO
+}

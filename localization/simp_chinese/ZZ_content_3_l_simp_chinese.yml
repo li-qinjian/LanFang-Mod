@@ -6,6 +6,9 @@
  dyn_c_nanyang: "南華"
  dyn_c_nanyang_adj: "南華"
  STATE_HONGKONG: "香港"
+ move_chineses_tt: "所有南洋华人会迁移到我们的首都地区"
+ lan_move_capital_to_malaya: "迁都马六甲"
+ lan_move_capital_to_malaya_desc: "马六甲历来是南洋的中心。随着华人政权的崛起，我们可以恢复这座城市作为首都的应有地位。"
    # 事件1 - 南洋国家视角（下南洋）
  nanyang_migration.1.t:0 "招募华人移民"
  nanyang_migration.1.d:0 "在[SCOPE.sCountry('han_country').GetName]的[SCOPE.sState('han_source_state').GetName]，大量华人因失业而陷入困境。我们正在寻求劳动力发展国家，是否应该招募这些勤劳的华人同胞前来定居？"

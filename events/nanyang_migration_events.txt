@@ -90,9 +90,9 @@ nanyang_migration.1 = {
 			exists = scope:han_destination_state
 		}
 		
-		custom_tooltip = {
-			text = nanyang_migration_tooltip
-		}
+		#custom_tooltip = {
+		#	text = nanyang_migration_tooltip
+		#}
 
 		# Migrate unemployed Han population (including Hakka)
 		# For cross-country migration, operate directly from source state
@@ -106,24 +106,25 @@ nanyang_migration.1 = {
 						is_pop_type = peasants
 					}
 				}
-				save_scope_as = migrant_pop
+				save_temporary_scope_as = relevant_pop
 				order_by = total_size
 				position = 0
 				check_range_bounds = no
 				move_partial_pop = {
 					state = scope:han_destination_state
+					#population_ratio = 0.1
 					population = {
 						# Move at most 10% of destination state's population, max 5000, or pop size, whichever is smaller
 						add = scope:han_destination_state.state_population
 						multiply = 0.1
 						if = {
 							limit = {
-								scope:migrant_pop.total_size >= 5000
+								scope:relevant_pop.total_size >= 5000
 							}
 							max = 5000
 						}
 						else = {
-							max = scope:migrant_pop.total_size
+							max = scope:relevant_pop.total_size
 						}
 					}
 				}
