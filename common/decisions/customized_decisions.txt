@@ -1,0 +1,98 @@
+﻿lan_move_capital_to_malaya = {
+	is_shown = {
+		c:LAN ?= ROOT
+		#NOT = { has_variable = moved_capital_to_malaya }
+		NOT = {
+			capital = { state_region = s:STATE_MALAYA }
+		}
+	}
+
+	possible = {
+		c:LAN ?= ROOT
+		owns_entire_state_region = STATE_MALAYA
+		s:STATE_MALAYA = {
+			any_scope_culture = {
+				is_primary_culture_of = ROOT
+			}
+			average_sol > 10
+		}
+	}
+
+	when_taken = {
+		#set_variable = moved_capital_to_malaya
+		set_capital = STATE_MALAYA
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+lan_move_chinese_to_capital = {
+	is_shown = {
+		c:LAN ?= ROOT
+	}
+
+	possible = {
+		c:LAN ?= ROOT
+		num_subjects > 0
+		any_subject_or_below = {
+			any_scope_state = {
+				any_scope_pop = {
+					culture = {
+						has_discrimination_trait = heritage_han
+					}
+				}
+			}
+		}
+	}
+
+	when_taken = {
+		every_subject_or_below = {
+			custom_tooltip = {
+				text = move_chineses_tt
+				every_scope_state = {
+					every_scope_pop = {
+						limit = {
+							culture = {
+								has_discrimination_trait = heritage_han
+							}
+						}
+						move_pop = root.capital
+					}
+				}
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 0
+	}
+}
+
+ban_opium = {
+	is_shown = {
+		is_player = yes
+		exists = market
+		market.owner = root
+		NOT = { is_banning_goods = g:opium }
+	}
+
+	possible = {
+		is_player = yes
+		#NOT = { has_law_or_variant = law_type:law_free_trade }
+		exists = market
+		any_primary_culture = {
+			has_discrimination_trait = heritage_han
+		}
+	}
+
+	when_taken = {
+		add_banned_goods = g:opium
+	}
+
+    ai_chance = {
+		value = 0
+    }
+}
+
