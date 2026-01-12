@@ -1,0 +1,317 @@
+#outh_sea_migration_button = {
+#	name = south_sea_migration_button
+#	desc = south_sea_migration_button_desc
+#
+#	visible = { always = yes }
+#
+#	possible = {
+#		hidden_trigger = {
+#			has_variable = enable_south_sea_migration_button
+#		}
+#		# Note that this closely reflects triggers in the event. Do not change one without changing both
+#		custom_tooltip = {
+#			text = migration_button_cooldown_tt
+#			NOT = { has_variable = sa_migration_cooldown }
+#		}
+#		average_sol >= 10
+#		any_country = {
+#			custom_tooltip = {
+#				text = same_state_religion
+#				religion = root.religion
+#			}
+#			custom_tooltip = {
+#				text = average_sol_below_root_tt
+#				average_sol <= root.average_sol
+#			}
+#			any_primary_culture = {
+#				culture_can_have_mass_migration_to_country = ROOT
+#			}
+#			any_scope_state = {
+#				OR = {
+#					region = sr:region_south_china
+#					region = sr:region_north_china
+#				}
+#				is_incorporated = yes
+#				count >= 3
+#			}
+#		}
+#		any_scope_state = {
+#			trigger_if = {
+#				limit = {
+#					owner = { has_journal_entry = je_southeast_sea_migration }
+#				}
+#					OR = {
+#						region = sr:region_indonesia
+#						region = sr:region_oceania
+#						region = sr:region_indochina
+#					}
+#				}
+#			state_is_eligible_as_mass_migration_target = yes
+#		}
+#		OR = {
+#			has_law = law_type:law_racial_segregation
+#			has_law = law_type:law_cultural_exclusion
+#			has_law = law_type:law_multicultural
+#		}
+#		NOR = {
+#			has_law = law_type:law_closed_borders
+#			has_law = law_type:law_isolationism
+#		}
+#	}
+#
+#	effect = {
+#		set_variable = {
+#			name = sa_migration_cooldown
+#			days = normal_modifier_time
+#		}
+#		custom_tooltip = {
+#			text = mass_migration_button_tt
+#		}
+#		trigger_event = { id = ss_migration.1 popup = yes }
+#		show_as_tooltip = {
+#			add_modifier = {
+#				name = ss_migration_cost
+#				days = normal_modifier_time
+#			}
+#		}
+#	}
+#
+#	ai_chance = {
+#		base = 1
+#	}
+#
+
+hakka_migration_button = {
+	name = hakka_migration_button
+	desc = hakka_migration_button_desc
+
+	visible = { always = yes }
+
+	possible = {
+		hidden_trigger = {
+			has_variable = enable_south_sea_migration_button
+		}
+		# Note that this closely reflects triggers in the event. Do not change one without changing both
+		custom_tooltip = {
+			text = migration_button_cooldown_tt
+			NOT = { has_variable = sa_migration_cooldown }
+		}
+		average_sol >= 10
+		any_country = {
+			custom_tooltip = {
+				text = same_state_religion
+				religion = root.religion
+			}
+			custom_tooltip = {
+				text = average_sol_below_root_tt
+				average_sol <= root.average_sol
+			}
+			any_scope_state = {
+				OR = {
+					region = sr:region_south_china
+					region = sr:region_north_china
+				}
+			}
+		}
+		any_scope_state = {
+			trigger_if = {
+				limit = {
+					owner = { has_journal_entry = je_southeast_sea_migration }
+				}
+					OR = {
+						region = sr:region_indonesia
+						region = sr:region_oceania
+						region = sr:region_indochina
+					}
+				}
+			state_is_eligible_as_mass_migration_target = yes
+		}
+		OR = {
+			has_law = law_type:law_racial_segregation
+			has_law = law_type:law_cultural_exclusion
+			has_law = law_type:law_multicultural
+		}
+		NOR = {
+			has_law = law_type:law_closed_borders
+			has_law = law_type:law_isolationism
+		}
+	}
+
+	effect = {
+		set_variable = {
+			name = sa_migration_cooldown
+			days = normal_modifier_time
+		}
+		custom_tooltip = {
+			text = mass_migration_button_tt
+		}
+		trigger_event = { id = ss_migration.4 popup = yes }
+		show_as_tooltip = {
+			add_modifier = {
+				name = ss_migration_cost
+				days = normal_modifier_time
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 100
+	}
+}
+
+yue_migration_button = {
+	name = yue_migration_button
+	desc = yue_migration_button_desc
+
+	visible = { always = yes }
+
+	possible = {
+		hidden_trigger = {
+			has_variable = enable_south_sea_migration_button
+		}
+		# Note that this closely reflects triggers in the event. Do not change one without changing both
+		custom_tooltip = {
+			text = migration_button_cooldown_tt
+			NOT = { has_variable = sa_migration_cooldown }
+		}
+		average_sol >= 10
+		any_country = {
+			custom_tooltip = {
+				text = same_state_religion
+				religion = root.religion
+			}
+			custom_tooltip = {
+				text = average_sol_below_root_tt
+				average_sol <= root.average_sol
+			}
+			any_scope_state = {
+				OR = {
+					region = sr:region_south_china
+					region = sr:region_north_china
+				}
+			}
+		}
+		any_scope_state = {
+			trigger_if = {
+				limit = {
+					owner = { has_journal_entry = je_southeast_sea_migration }
+				}
+					OR = {
+						region = sr:region_indonesia
+						region = sr:region_oceania
+						region = sr:region_indochina
+					}
+				}
+			state_is_eligible_as_mass_migration_target = yes
+		}
+		OR = {
+			has_law = law_type:law_racial_segregation
+			has_law = law_type:law_cultural_exclusion
+			has_law = law_type:law_multicultural
+		}
+		NOR = {
+			has_law = law_type:law_closed_borders
+			has_law = law_type:law_isolationism
+		}
+	}
+
+	effect = {
+		set_variable = {
+			name = sa_migration_cooldown
+			days = normal_modifier_time
+		}
+		custom_tooltip = {
+			text = mass_migration_button_tt
+		}
+		trigger_event = { id = ss_migration.5 popup = yes }
+		show_as_tooltip = {
+			add_modifier = {
+				name = ss_migration_cost
+				days = normal_modifier_time
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 100
+	}
+}
+
+min_migration_button = {
+	name = min_migration_button
+	desc = min_migration_button_desc
+
+	visible = { always = yes }
+
+	possible = {
+		hidden_trigger = {
+			has_variable = enable_south_sea_migration_button
+		}
+		# Note that this closely reflects triggers in the event. Do not change one without changing both
+		custom_tooltip = {
+			text = migration_button_cooldown_tt
+			NOT = { has_variable = sa_migration_cooldown }
+		}
+		average_sol >= 10
+		any_country = {
+			custom_tooltip = {
+				text = same_state_religion
+				religion = root.religion
+			}
+			custom_tooltip = {
+				text = average_sol_below_root_tt
+				average_sol <= root.average_sol
+			}
+			any_scope_state = {
+				OR = {
+					region = sr:region_south_china
+					region = sr:region_north_china
+				}
+			}
+		}
+		any_scope_state = {
+			trigger_if = {
+				limit = {
+					owner = { has_journal_entry = je_southeast_sea_migration }
+				}
+					OR = {
+						region = sr:region_indonesia
+						region = sr:region_oceania
+						region = sr:region_indochina
+					}
+				}
+			state_is_eligible_as_mass_migration_target = yes
+		}
+		OR = {
+			has_law = law_type:law_racial_segregation
+			has_law = law_type:law_cultural_exclusion
+			has_law = law_type:law_multicultural
+		}
+		NOR = {
+			has_law = law_type:law_closed_borders
+			has_law = law_type:law_isolationism
+		}
+	}
+
+	effect = {
+		set_variable = {
+			name = sa_migration_cooldown
+			days = normal_modifier_time
+		}
+		custom_tooltip = {
+			text = mass_migration_button_tt
+		}
+		trigger_event = { id = ss_migration.6 popup = yes }
+		show_as_tooltip = {
+			add_modifier = {
+				name = ss_migration_cost
+				days = normal_modifier_time
+			}
+		}
+	}
+
+	ai_chance = {
+		value = 100
+	}
+}
+

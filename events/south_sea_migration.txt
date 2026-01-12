@@ -1,0 +1,373 @@
+namespace = ss_migration
+# South Sea Migration events
+
+# SS migration button event
+#ss_migration.1 = {
+#	type = country_event
+#	placement = scope:migration_target_state
+#	
+#	title = ss_migration.1.t
+#	desc = ss_migration.1.d
+#	flavor = ss_migration.1.f
+#	
+#	event_image = {
+#		video = "southamerica_factory_opening"
+#	}
+#
+#	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+#
+#	icon = "gfx/interface/icons/event_icons/event_map.dds"
+#	
+#	duration = 3
+#	
+#	trigger = {
+#		# triggered by southamerica_migration_button
+#	}
+#
+#	immediate = {
+#		# Note that this closely reflects triggers in the button. Do not change one without changing both
+#		random_country = {
+#			limit = {
+#				average_sol <= root.average_sol
+#				any_scope_state = {
+#					OR = {
+#						region = sr:region_south_china
+#						region = sr:region_north_china
+#					}
+#					is_incorporated = yes
+#				}
+#			}
+#			save_scope_as = migration_country
+#			random_scope_state = {
+#				limit = {
+#					OR = {
+#						region = sr:region_south_china
+#						region = sr:region_north_china
+#					}
+#				}
+#				save_scope_as = migration_state
+#				random_scope_culture = {
+#					limit = {
+#						has_homeland = PREV
+#						culture_can_have_mass_migration_to_country = ROOT
+#					}
+#					save_scope_as = migration_culture
+#				}
+#			}
+#
+#		}
+#		ordered_scope_state = {
+#			limit = {
+#				trigger_if = {
+#					limit = { 
+#						ROOT = { 
+#							has_journal_entry = je_southeast_sea_migration
+#						}
+#					}
+#					OR = {
+#						region = sr:region_indonesia
+#						region = sr:region_oceania
+#						region = sr:region_indochina
+#					}
+#				}
+#				state_is_eligible_as_mass_migration_target = yes
+#			}
+#			order_by = migration_pull
+#			save_scope_as = migration_target_state
+#		}
+#	}
+#
+#	option = {
+#		name = ss_migration.1.a
+#		add_modifier = {
+#			name = ss_migration_cost
+#			days = normal_modifier_time
+#		}
+#		scope:migration_target_state = {
+#			create_mass_migration = {
+#				origin = scope:migration_country
+#				culture = scope:migration_culture
+#			}
+#		}
+#	}
+#
+
+# Startup event
+ss_migration.2 = {
+	type = country_event
+	placement = ROOT
+	
+	title = ss_migration.2.t
+	desc = ss_migration.2.d
+	flavor = ss_migration.2.f
+	
+	event_image = {
+		video = "asia_poor_people_moving"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	
+	duration = 3
+	
+	trigger = {
+		# triggered by je_south_america_migration
+	}
+
+	option = {
+		name = ss_migration.2.a
+		default_option = yes
+		custom_tooltip = {
+			text = ss_migration_button_exists_tt
+			set_variable = enable_south_sea_migration_button
+		}
+		if = {
+			limit = {
+				has_journal_entry = je_southeast_sea_migration
+			}
+			custom_tooltip = {
+				text = ss_migration2_tt
+				every_scope_state = {
+					limit = {
+						is_incorporated = yes
+					}
+					add_modifier = {
+						name = ss_migration_attraction
+						days = long_modifier_time
+					}
+				}
+			}
+		}
+		
+		ai_chance = {
+			base = 1
+		}
+	}
+	option = {
+		name = ss_migration.2.b
+		custom_tooltip = ss_migration_cancel_tt
+		set_variable = cancel_sa_migration_var
+		ai_chance = {
+			base = 0
+		}
+	}
+}
+
+# Completion event
+ss_migration.3 = {
+	type = country_event
+	placement = ROOT
+	
+	title = ss_migration.3.t
+	desc = ss_migration.3.d
+	flavor = ss_migration.3.f
+	
+	event_image = {
+		video = "africa_construction_colony"
+	}
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+	
+	duration = 3
+	
+	trigger = {
+		# triggered by je_south_america_migration
+	}
+
+	option = {
+		name = ss_migration.3.a
+		add_modifier = {
+			name = populated_southamerica
+		}
+	}
+}
+
+
+ss_migration.4 = {#客家移民
+	type = country_event
+	title = ss_migration.4.t
+	desc = ss_migration.4.d
+	flavor = ss_migration.4.f
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	event_image = {
+		video = "asia_poor_people_moving"
+	}
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		random_country = {
+			limit = {
+				average_sol <= root.average_sol
+				any_scope_state = {
+					OR = {
+						region = sr:region_south_china
+						region = sr:region_north_china
+					}
+					is_incorporated = yes
+				}
+			}
+			save_scope_as = hakka_migration_country
+		}
+		ordered_scope_state = {
+			limit = {
+				state_is_eligible_as_mass_migration_target = yes
+			}
+			order_by = migration_pull
+			save_scope_as = hakka_migration_target_state
+		}
+	}
+
+	option = {
+		name = ss_migration.4.a
+
+		add_modifier = {
+			name = ss_migration_cost
+			days = normal_modifier_time
+		}
+		scope:hakka_migration_target_state = {
+			create_mass_migration = {
+				origin = scope:hakka_migration_country
+				culture = cu:hakka
+			} 
+			hidden_effect = {
+			create_pop = {
+				culture = hakka
+				size = 1
+				}
+			}
+		}
+	}
+}
+
+ss_migration.5 = {#粤人移民
+	type = country_event
+	title = ss_migration.5.t
+	desc = ss_migration.5.d
+	flavor = ss_migration.5.f
+
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+	event_image = {
+		video = "asia_poor_people_moving"
+	}
+
+	duration = 3
+
+	trigger = {
+	}
+
+	immediate = {
+		random_country = {
+			limit = {
+				average_sol <= root.average_sol
+				any_scope_state = {
+					OR = {
+						region = sr:region_south_china
+						region = sr:region_north_china
+					}
+					is_incorporated = yes
+				}
+			}
+			save_scope_as = yue_migration_country
+		}
+		ordered_scope_state = {
+			limit = {
+				state_is_eligible_as_mass_migration_target = yes
+			}
+			order_by = migration_pull
+			save_scope_as = yue_migration_target_state
+		}
+	}
+
+	option = {
+		name = ss_migration.5.a
+
+		add_modifier = {
+			name = ss_migration_cost
+			days = normal_modifier_time
+		}
+		scope:yue_migration_target_state = {
+			create_mass_migration = {
+				origin = scope:yue_migration_country
+				culture = cu:yue
+			} 
+			hidden_effect = {
+			create_pop = {
+				culture = yue
+				size = 1
+				}
+			}
+		}
+	}
+}
+
+ss_migration.6 = {#福建移民
+type = country_event
+title = ss_migration.6.t
+desc = ss_migration.6.d
+flavor = ss_migration.6.f
+
+on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+
+event_image = {
+	video = "asia_poor_people_moving"
+}
+
+duration = 3
+
+trigger = {
+}
+
+immediate = {
+	random_country = {
+		limit = {
+			average_sol <= root.average_sol
+			any_scope_state = {
+				OR = {
+					region = sr:region_south_china
+					region = sr:region_north_china
+				}
+				is_incorporated = yes
+			}
+		}
+		save_scope_as = min_migration_country
+	}
+	ordered_scope_state = {
+		limit = {
+			state_is_eligible_as_mass_migration_target = yes
+		}
+		order_by = migration_pull
+		save_scope_as = min_migration_target_state
+	}
+}
+
+option = {
+	name = ss_migration.6.a
+
+	add_modifier = {
+		name = ss_migration_cost
+		days = normal_modifier_time
+	}
+	scope:min_migration_target_state = {
+		create_mass_migration = {
+			origin = scope:min_migration_country
+			culture = cu:min
+		} 
+		hidden_effect = {
+		create_pop = {
+			culture = min
+			size = 1
+			}
+		}
+	}
+}
+}

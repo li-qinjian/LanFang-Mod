@@ -1,0 +1,155 @@
+#下南洋 south sea migration
+je_southeast_sea_migration = {
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	group = je_group_foreign_affairs
+
+	is_shown_when_inactive = {
+		capital = {
+			region = sr:region_indonesia
+		}
+		any_primary_culture = {
+			has_discrimination_trait = east_asian_heritage
+		}
+	}
+
+	possible = {
+		has_technology_researched = colonization
+		average_sol >= 10
+		is_at_war = no
+		any_primary_culture = {
+			has_discrimination_trait = east_asian_heritage
+		}
+		OR = {
+			has_law = law_type:law_racial_segregation
+			has_law = law_type:law_cultural_exclusion
+			has_law = law_type:law_multicultural
+		}
+		NOR = {
+			has_law = law_type:law_closed_borders
+			has_law = law_type:law_isolationism
+		}
+	}
+
+	immediate = {
+		set_variable = {
+			name = southeast_sea_incorporated_population
+			value = 0
+		}
+		set_variable = {
+			name = southeast_sea_incorporated_states
+			value = 0
+		}
+		every_scope_state = {
+			limit = {
+				is_incorporated = yes
+				region = sr:region_indonesia
+			}
+			ROOT = {
+				change_variable = {
+					name = southeast_sea_incorporated_population
+					add = PREV.state_population
+				}
+				change_variable = {
+					name = southeast_sea_incorporated_states
+					add = 1
+				}
+			}
+		}
+		set_variable = {
+			name = southeast_sea_migration_goal
+			value = var:southeast_sea_incorporated_states
+		}
+		change_variable = {
+			name = southeast_sea_migration_goal
+			multiply = 1500000
+		}
+		trigger_event = { id = ss_migration.2 popup = yes }
+	}
+
+	on_weekly_pulse = {
+		effect = {
+			set_variable = {
+				name = southeast_sea_incorporated_population
+				value = 0
+			}
+			every_scope_state = {
+				limit = {
+					is_incorporated = yes
+					region = sr:region_indonesia
+				}
+				ROOT = {
+					change_variable = {
+						name = southeast_sea_incorporated_population
+						add = PREV.state_population
+					}
+				}
+			}
+			set_variable = {
+				name = southeast_sea_incorporated_states
+				value = 0
+			}
+			every_scope_state = {
+				limit = {
+					is_incorporated = yes
+					region = sr:region_indonesia
+				}
+				ROOT = {
+					change_variable = {
+						name = southeast_sea_incorporated_states
+						add = 1
+					}
+				}
+			}
+			set_variable = {
+				name = southeast_sea_migration_goal
+				value = var:southeast_sea_incorporated_states
+			}
+			change_variable = {
+				name = southeast_sea_migration_goal
+				multiply = 1000000
+			}
+		}
+	}
+
+	complete = {
+		custom_tooltip = {
+			text = ss_migration_completion_tt
+			trigger_if = {
+				limit = { exists = var:south_america_incorporated_population }
+				var:southeast_sea_incorporated_population >= var:southeast_sea_migration_goal 
+				var:southeast_sea_incorporated_population > 0
+				var:southeast_sea_migration_goal > 0
+			}
+			trigger_else = {
+				always = no
+			}
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = ss_migration.3 popup = yes }
+		show_as_tooltip = {
+			add_modifier = {
+				name = populated_southamerica
+			}
+		}
+	}
+
+	modifiers_while_active = {
+		lanfang_migration
+	}
+
+	invalid = {
+		has_variable = cancel_sa_migration_var
+	}
+
+	#scripted_button = south_sea_migration_button
+	scripted_button = hakka_migration_button
+	scripted_button = yue_migration_button
+	scripted_button = min_migration_button
+
+	weight = 100
+
+	should_be_pinned_by_default = yes
+}
