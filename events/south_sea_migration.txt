@@ -1,97 +1,6 @@
 namespace = ss_migration
 # South Sea Migration events
 
-# SS migration button event
-#ss_migration.1 = {
-#	type = country_event
-#	placement = scope:migration_target_state
-#	
-#	title = ss_migration.1.t
-#	desc = ss_migration.1.d
-#	flavor = ss_migration.1.f
-#	
-#	event_image = {
-#		video = "southamerica_factory_opening"
-#	}
-#
-#	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
-#
-#	icon = "gfx/interface/icons/event_icons/event_map.dds"
-#	
-#	duration = 3
-#	
-#	trigger = {
-#		# triggered by southamerica_migration_button
-#	}
-#
-#	immediate = {
-#		# Note that this closely reflects triggers in the button. Do not change one without changing both
-#		random_country = {
-#			limit = {
-#				average_sol <= root.average_sol
-#				any_scope_state = {
-#					OR = {
-#						region = sr:region_south_china
-#						region = sr:region_north_china
-#					}
-#					is_incorporated = yes
-#				}
-#			}
-#			save_scope_as = migration_country
-#			random_scope_state = {
-#				limit = {
-#					OR = {
-#						region = sr:region_south_china
-#						region = sr:region_north_china
-#					}
-#				}
-#				save_scope_as = migration_state
-#				random_scope_culture = {
-#					limit = {
-#						has_homeland = PREV
-#						culture_can_have_mass_migration_to_country = ROOT
-#					}
-#					save_scope_as = migration_culture
-#				}
-#			}
-#
-#		}
-#		ordered_scope_state = {
-#			limit = {
-#				trigger_if = {
-#					limit = { 
-#						ROOT = { 
-#							has_journal_entry = je_southeast_sea_migration
-#						}
-#					}
-#					OR = {
-#						region = sr:region_indonesia
-#						region = sr:region_oceania
-#						region = sr:region_indochina
-#					}
-#				}
-#				state_is_eligible_as_mass_migration_target = yes
-#			}
-#			order_by = migration_pull
-#			save_scope_as = migration_target_state
-#		}
-#	}
-#
-#	option = {
-#		name = ss_migration.1.a
-#		add_modifier = {
-#			name = ss_migration_cost
-#			days = normal_modifier_time
-#		}
-#		scope:migration_target_state = {
-#			create_mass_migration = {
-#				origin = scope:migration_country
-#				culture = scope:migration_culture
-#			}
-#		}
-#	}
-#
-
 # Startup event
 ss_migration.2 = {
 	type = country_event
@@ -147,7 +56,7 @@ ss_migration.2 = {
 	option = {
 		name = ss_migration.2.b
 		custom_tooltip = ss_migration_cancel_tt
-		set_variable = cancel_sa_migration_var
+		set_variable = cancel_ss_migration_var
 		ai_chance = {
 			base = 0
 		}

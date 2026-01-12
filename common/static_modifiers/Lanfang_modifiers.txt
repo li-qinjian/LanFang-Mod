@@ -1,87 +1,11 @@
-﻿
-    ss_migration_cost = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
-	country_influence_mult = -0.25
-	country_authority_add = -100
+﻿    ss_migration_cost = {
+		icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_negative.dds
+		country_influence_mult = -0.25
+		country_authority_add = -100
 	}
     ss_migration_attraction = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
-	state_migration_pull_mult = 0.25
-	}
-    java_reclamation_complete = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-	state_migration_pull_mult = 0.15
-	}
-    java_water_conservancy_project= {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-	building_group_bg_agriculture_throughput_add = 0.1
-	building_group_bg_plantations_throughput_add = 0.1
-	}
-
-    closed_door_policy = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-	political_movement_radicalism_mult = -0.5
-			
-	}
-	Khuntîen_rubber_hub_modifier = {
-		icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
-		building_rubber_plantation_throughput_add = 0.2
-    }
-	
-	borneo_city_of_lights_modifier = {
-		icon = gfx/interface/icons/timed_modifier_icons/modifier_gear_positive.dds
-		state_decree_cost_mult = -0.2
-		country_prestige_add = 10
-	}
-	
-    luo_fangbo_modifier = {
-		icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
-		state_middle_standard_of_living_add = 1
-		state_middle_expected_sol = 1
-	}
-	borneo_migration = {
-		icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-		state_migration_pull_mult = 1
-		state_infrastructure_add = 5
-	}
-	borneo_sasinkeng = {
-		icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
-		building_arts_academy_throughput_add = 0.1
-		state_assimilation_mult = 0.2
-	}
-	control_of_malacca = {
-	icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-	country_trade_route_competitiveness_mult = 0.3
-	country_tax_income_add = 50000
-	}
-	malay_position_compromise = {
-		icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_negative.dds
-		country_prestige_add = -100
-	}
-	
-	malay_position_compromise_rejected = {
-		icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_negative.dds
-		state_radicals_from_discrimination_mult = 1
-	}
-	ocean_destiny_victory = {
-		icon = gfx/interface/icons/timed_modifier_icons/modifier_fist_positive.dds
-		country_prestige_mult = 0.1
-		state_migration_pull_mult = 0.1
-	}
-	lanfang_independent = {
-		icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
-		country_liberty_desire_add = 0.2
-		country_overlord_income_transfer_mult = -0.5
-	}
-	lanfang_rely = {
-		icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
-		country_liberty_desire_increase_mult = -0.25
+		icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
 		state_migration_pull_mult = 0.25
-	}
-	lanfang_free = {
-		icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds
-		unit_offense_mult = 0.15
-		unit_defense_mult = 0.15
 	}
 	capital_pontianak = {
 		icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
@@ -108,8 +32,12 @@
 		country_trade_route_quantity_mult = 0.25
 		country_trade_route_competitiveness_mult = 0.5
 		country_tax_income_add = 75000
-		}
+	}
 	lanfang_migration= {
 		icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
 		state_migration_pull_mult = 0.25
-		}
+	}
+	#populated_nanyang = {
+	#	icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
+	#	country_prestige_add = 25
+	#}

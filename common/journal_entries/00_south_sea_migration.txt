@@ -6,10 +6,16 @@ je_southeast_sea_migration = {
 
 	is_shown_when_inactive = {
 		capital = {
-			region = sr:region_indonesia
+			OR = {
+				region = sr:region_indonesia
+				region = sr:region_indochina
+				region = sr:region_oceania
+			}
+			is_in_geographic_region = geographic_region_south_east_asia
 		}
+
 		any_primary_culture = {
-			has_discrimination_trait = east_asian_heritage
+			has_discrimination_trait = heritage_han
 		}
 	}
 
@@ -18,7 +24,7 @@ je_southeast_sea_migration = {
 		average_sol >= 10
 		is_at_war = no
 		any_primary_culture = {
-			has_discrimination_trait = east_asian_heritage
+			has_discrimination_trait = heritage_han
 		}
 		OR = {
 			has_law = law_type:law_racial_segregation
@@ -43,7 +49,11 @@ je_southeast_sea_migration = {
 		every_scope_state = {
 			limit = {
 				is_incorporated = yes
-				region = sr:region_indonesia
+				OR = {
+					region = sr:region_indonesia
+					region = sr:region_indochina
+					region = sr:region_oceania
+				}
 			}
 			ROOT = {
 				change_variable = {
@@ -62,7 +72,7 @@ je_southeast_sea_migration = {
 		}
 		change_variable = {
 			name = southeast_sea_migration_goal
-			multiply = 1500000
+			multiply = 1000000
 		}
 		trigger_event = { id = ss_migration.2 popup = yes }
 	}
@@ -76,7 +86,11 @@ je_southeast_sea_migration = {
 			every_scope_state = {
 				limit = {
 					is_incorporated = yes
-					region = sr:region_indonesia
+					OR = {
+						region = sr:region_indonesia
+						region = sr:region_indochina
+						region = sr:region_oceania
+					}
 				}
 				ROOT = {
 					change_variable = {
@@ -92,7 +106,11 @@ je_southeast_sea_migration = {
 			every_scope_state = {
 				limit = {
 					is_incorporated = yes
-					region = sr:region_indonesia
+					OR = {
+						region = sr:region_indonesia
+						region = sr:region_indochina
+						region = sr:region_oceania
+					}
 				}
 				ROOT = {
 					change_variable = {
@@ -116,7 +134,7 @@ je_southeast_sea_migration = {
 		custom_tooltip = {
 			text = ss_migration_completion_tt
 			trigger_if = {
-				limit = { exists = var:south_america_incorporated_population }
+				limit = { exists = var:southeast_sea_incorporated_population }
 				var:southeast_sea_incorporated_population >= var:southeast_sea_migration_goal 
 				var:southeast_sea_incorporated_population > 0
 				var:southeast_sea_migration_goal > 0
@@ -141,7 +159,7 @@ je_southeast_sea_migration = {
 	}
 
 	invalid = {
-		has_variable = cancel_sa_migration_var
+		has_variable = cancel_ss_migration_var
 	}
 
 	#scripted_button = south_sea_migration_button
