@@ -31,33 +31,25 @@
 lan_move_chinese_to_capital = {
 	is_shown = {
 		c:LAN ?= ROOT
+		num_subjects > 0
 	}
 
 	possible = {
 		c:LAN ?= ROOT
 		num_subjects > 0
-		any_subject_or_below = {
-			any_scope_state = {
-				any_scope_pop = {
-					culture = {
-						has_discrimination_trait = heritage_han
-					}
-				}
-			}
-		}
 	}
 
 	when_taken = {
 		every_subject_or_below = {
-			custom_tooltip = {
-				text = move_chineses_tt
-				every_scope_state = {
-					every_scope_pop = {
-						limit = {
-							culture = {
-								has_discrimination_trait = heritage_han
-							}
+			every_scope_state = {
+				every_scope_pop = {
+					limit = {
+						culture = {
+							has_discrimination_trait = heritage_han
 						}
+					}
+					custom_tooltip = {
+						text = move_chineses_tt
 						move_pop = root.capital
 					}
 				}

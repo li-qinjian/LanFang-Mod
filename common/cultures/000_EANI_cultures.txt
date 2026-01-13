@@ -447,11 +447,12 @@ manchu={
 	color= rgb{ 233 207 84 }
 	religion = confucian
 	heritage = heritage_manchu
-	language = language_jurchenic
+	language = language_mandarin
 	name_format = last_first
 
 	obsessions = {
 		tea
+		opium
 	}
 
 	traditions = { tradition_sinosphere }

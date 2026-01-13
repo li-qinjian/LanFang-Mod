@@ -24,9 +24,9 @@ hakka_migration_button = {
 				average_sol <= root.average_sol
 			}
 			any_scope_state = {
-				OR = {
-					region = sr:region_south_china
-					region = sr:region_north_china
+				is_coastal = yes
+				state_region = {
+					is_homeland = cu:hakka
 				}
 			}
 		}
@@ -35,18 +35,13 @@ hakka_migration_button = {
 				limit = {
 					owner = { has_journal_entry = je_southeast_sea_migration }
 				}
-					OR = {
-						region = sr:region_indonesia
-						region = sr:region_oceania
-						region = sr:region_indochina
-					}
+				OR = {
+					region = sr:region_indonesia
+					region = sr:region_oceania
+					region = sr:region_indochina
 				}
+			}
 			state_is_eligible_as_mass_migration_target = yes
-		}
-		OR = {
-			has_law = law_type:law_racial_segregation
-			has_law = law_type:law_cultural_exclusion
-			has_law = law_type:law_multicultural
 		}
 		NOR = {
 			has_law = law_type:law_closed_borders
@@ -102,9 +97,9 @@ yue_migration_button = {
 				average_sol <= root.average_sol
 			}
 			any_scope_state = {
-				OR = {
-					region = sr:region_south_china
-					region = sr:region_north_china
+				is_coastal = yes
+				state_region = {
+					is_homeland = cu:yue
 				}
 			}
 		}
@@ -113,19 +108,15 @@ yue_migration_button = {
 				limit = {
 					owner = { has_journal_entry = je_southeast_sea_migration }
 				}
-					OR = {
-						region = sr:region_indonesia
-						region = sr:region_oceania
-						region = sr:region_indochina
-					}
+				OR = {
+					region = sr:region_indonesia
+					region = sr:region_oceania
+					region = sr:region_indochina
 				}
+			}
 			state_is_eligible_as_mass_migration_target = yes
 		}
-		OR = {
-			has_law = law_type:law_racial_segregation
-			has_law = law_type:law_cultural_exclusion
-			has_law = law_type:law_multicultural
-		}
+
 		NOR = {
 			has_law = law_type:law_closed_borders
 			has_law = law_type:law_isolationism
@@ -180,9 +171,9 @@ min_migration_button = {
 				average_sol <= root.average_sol
 			}
 			any_scope_state = {
-				OR = {
-					region = sr:region_south_china
-					region = sr:region_north_china
+				is_coastal = yes
+				state_region = {
+					is_homeland = cu:min
 				}
 			}
 		}
@@ -191,18 +182,13 @@ min_migration_button = {
 				limit = {
 					owner = { has_journal_entry = je_southeast_sea_migration }
 				}
-					OR = {
-						region = sr:region_indonesia
-						region = sr:region_oceania
-						region = sr:region_indochina
-					}
+				OR = {
+					region = sr:region_indonesia
+					region = sr:region_oceania
+					region = sr:region_indochina
 				}
+			}
 			state_is_eligible_as_mass_migration_target = yes
-		}
-		OR = {
-			has_law = law_type:law_racial_segregation
-			has_law = law_type:law_cultural_exclusion
-			has_law = law_type:law_multicultural
 		}
 		NOR = {
 			has_law = law_type:law_closed_borders

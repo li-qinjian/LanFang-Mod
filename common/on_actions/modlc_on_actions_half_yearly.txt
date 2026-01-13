@@ -1,15 +1,15 @@
 ﻿# Fired off on_half_yearly_pulse_country
-on_half_yearly_pulse_country = {
-	on_actions = { # delay ensures events won't fire simultaneously
-		mod_lc_half_yearly_events
-		delay = { days = 4 }
-	}
-}
+#on_half_yearly_pulse_country = {
+#	on_actions = { # delay ensures events won't fire simultaneously
+#		mod_lc_half_yearly_events
+#		delay = { days = 4 }
+#	}
+#}
 
 # Nanyang Migration Events
-mod_lc_half_yearly_events = {
-	random_events = {
-		chance_to_happen = 75
-		10 = nanyang_migration.1
-	}
-}
+#mod_lc_half_yearly_events = {
+#	random_events = {
+#		chance_to_happen = 75
+#		10 = nanyang_migration.1
+#	}
+#}

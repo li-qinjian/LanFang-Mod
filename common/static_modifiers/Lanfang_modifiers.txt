@@ -7,32 +7,6 @@
 		icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
 		state_migration_pull_mult = 0.25
 	}
-	capital_pontianak = {
-		icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
-		country_authority_mult = 0.1
-		state_migration_pull_mult = 0.2
-	}
-	capital_klang = {
-		icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
-		unit_navy_defense_mult = 0.1
-		country_prestige_from_navy_power_projection_mult = 0.15
-	}
-	capital_batavia = {
-		icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
-		country_bureaucracy_mult = 0.1
-		state_bureaucracy_population_base_cost_factor_mult = -0.05
-	}
-	capital_palembang = {
-		icon = gfx/interface/icons/timed_modifier_icons/modifier_statue_positive.dds
-		country_legitimacy_base_add = 20
-		building_arts_academy_throughput_add = 0.1
-	}
-	control_of_malacca_update = {
-		icon = gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds
-		country_trade_route_quantity_mult = 0.25
-		country_trade_route_competitiveness_mult = 0.5
-		country_tax_income_add = 75000
-	}
 	lanfang_migration= {
 		icon = gfx/interface/icons/timed_modifier_icons/modifier_documents_positive.dds
 		state_migration_pull_mult = 0.25

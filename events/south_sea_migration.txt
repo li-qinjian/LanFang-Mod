@@ -117,11 +117,10 @@ ss_migration.4 = {#客家移民
 			limit = {
 				average_sol <= root.average_sol
 				any_scope_state = {
-					OR = {
-						region = sr:region_south_china
-						region = sr:region_north_china
+					is_coastal = yes
+					state_region = {
+						is_homeland = cu:hakka
 					}
-					is_incorporated = yes
 				}
 			}
 			save_scope_as = hakka_migration_country
@@ -129,6 +128,9 @@ ss_migration.4 = {#客家移民
 		ordered_scope_state = {
 			limit = {
 				state_is_eligible_as_mass_migration_target = yes
+				any_scope_pop = {
+					culture = cu:hakka
+				}
 			}
 			order_by = migration_pull
 			save_scope_as = hakka_migration_target_state
@@ -147,12 +149,6 @@ ss_migration.4 = {#客家移民
 				origin = scope:hakka_migration_country
 				culture = cu:hakka
 			} 
-			hidden_effect = {
-			create_pop = {
-				culture = hakka
-				size = 1
-				}
-			}
 		}
 	}
 }
@@ -179,11 +175,10 @@ ss_migration.5 = {#粤人移民
 			limit = {
 				average_sol <= root.average_sol
 				any_scope_state = {
-					OR = {
-						region = sr:region_south_china
-						region = sr:region_north_china
+					is_coastal = yes
+					state_region = {
+						is_homeland = cu:yue
 					}
-					is_incorporated = yes
 				}
 			}
 			save_scope_as = yue_migration_country
@@ -191,6 +186,9 @@ ss_migration.5 = {#粤人移民
 		ordered_scope_state = {
 			limit = {
 				state_is_eligible_as_mass_migration_target = yes
+				any_scope_pop = {
+					culture = cu:yue
+				}
 			}
 			order_by = migration_pull
 			save_scope_as = yue_migration_target_state
@@ -209,74 +207,64 @@ ss_migration.5 = {#粤人移民
 				origin = scope:yue_migration_country
 				culture = cu:yue
 			} 
-			hidden_effect = {
-			create_pop = {
-				culture = yue
-				size = 1
-				}
-			}
 		}
 	}
 }
 
 ss_migration.6 = {#福建移民
-type = country_event
-title = ss_migration.6.t
-desc = ss_migration.6.d
-flavor = ss_migration.6.f
+	type = country_event
+	title = ss_migration.6.t
+	desc = ss_migration.6.d
+	flavor = ss_migration.6.f
 
-on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
 
-event_image = {
-	video = "asia_poor_people_moving"
-}
+	event_image = {
+		video = "asia_poor_people_moving"
+	}
 
-duration = 3
+	duration = 3
 
-trigger = {
-}
+	trigger = {
+	}
 
-immediate = {
-	random_country = {
-		limit = {
-			average_sol <= root.average_sol
-			any_scope_state = {
-				OR = {
-					region = sr:region_south_china
-					region = sr:region_north_china
+	immediate = {
+		random_country = {
+			limit = {
+				average_sol <= root.average_sol
+				any_scope_state = {
+					is_coastal = yes
+					state_region = {
+						is_homeland = cu:min
+					}
 				}
-				is_incorporated = yes
 			}
+			save_scope_as = min_migration_country
 		}
-		save_scope_as = min_migration_country
-	}
-	ordered_scope_state = {
-		limit = {
-			state_is_eligible_as_mass_migration_target = yes
-		}
-		order_by = migration_pull
-		save_scope_as = min_migration_target_state
-	}
-}
-
-option = {
-	name = ss_migration.6.a
-
-	add_modifier = {
-		name = ss_migration_cost
-		days = normal_modifier_time
-	}
-	scope:min_migration_target_state = {
-		create_mass_migration = {
-			origin = scope:min_migration_country
-			culture = cu:min
-		} 
-		hidden_effect = {
-		create_pop = {
-			culture = min
-			size = 1
+		ordered_scope_state = {
+			limit = {
+				state_is_eligible_as_mass_migration_target = yes
+				any_scope_pop = {
+					culture = cu:min
+				}
 			}
+			order_by = migration_pull
+			save_scope_as = min_migration_target_state
 		}
 	}
-}
+
+	option = {
+		name = ss_migration.6.a
+
+		add_modifier = {
+			name = ss_migration_cost
+			days = normal_modifier_time
+		}
+		scope:min_migration_target_state = {
+			create_mass_migration = {
+				origin = scope:min_migration_country
+				culture = cu:min
+			} 
+		}
+	}
 }

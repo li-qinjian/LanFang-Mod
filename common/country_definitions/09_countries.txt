@@ -8,3 +8,14 @@ REPLACE:LAN = {
 	cultures = { hakka }
 	capital = STATE_WEST_BORNEO
 }
+
+REPLACE:CHI = {
+	color = { 252 185 61 }
+
+	country_type = unrecognized
+
+	tier = empire
+
+	cultures = { han min yue hakka}
+	capital = STATE_BEIJING
+}
