@@ -16,6 +16,6 @@ REPLACE:CHI = {
 
 	tier = empire
 
-	cultures = { han min yue hakka}
+	cultures = { han }
 	capital = STATE_BEIJING
 }
