@@ -108,12 +108,6 @@ ban_opium = {
 					target_country = c:SMB
 					war = no
 					type = dp_annex_subject
-
-					add_war_goal = {
-						holder = c:DEI
-						target_country = c:SMB
-						type = annex_country
-					}
 				}
 			}
 		}
@@ -129,38 +123,17 @@ move_capital_from_split_state = {
 		is_player = yes
 		capital = {
 			is_split_state = yes
-			NOT = { is_homeland_of_country_cultures = yes }
+			#NOT = { is_homeland_of_country_cultures = yes }
 		}
 	}
 
 	possible = {
-		any_scope_state = {
-			is_capital = no
-			is_split_state = no
-		}
+		c:LAN ?= ROOT
+		owns_entire_state_region = STATE_NORTH_BORNEO
 	}
 
 	when_taken = {
-		random_scope_state = {
-			limit = {
-				is_capital = no
-				is_split_state = no
-			}
-			position = 0
-			weight = {
-				value = 1
-				if = {
-					limit = { is_incorporated = yes }
-					add = 100
-				}
-			}
-			
-			save_scope_as = new_capital_state
-			
-			root = {
-				set_capital = scope:new_capital_state.state_region
-			}
-		}
+		set_capital = STATE_NORTH_BORNEO
 		
 		capital = {
 			set_state_type = incorporated
@@ -169,16 +142,6 @@ move_capital_from_split_state = {
 
 	ai_chance = {
 		value = 0
-		
-		if = {
-			limit = {
-				capital = {
-					is_split_state = yes
-					turmoil >= 0.5
-				}
-			}
-			add = 50
-		}
 	}
 }
 
@@ -186,29 +149,14 @@ trigger_prussia_danish_war = {
 	is_shown = {
 		is_player = yes
 		#game_date >= 1848.1.1
-		exists = c:PRU
-		exists = c:DEN
-		exists = c:HOL
-		exists = c:SCH
 		NOT = { has_global_variable = prussia_danish_war_triggered }
 		
-		custom_tooltip = {
-			text = prussia_danish_war_state_condition_tt
-			s:STATE_SCHLESWIG_HOLSTEIN = {
-				any_scope_state = {
-					OR = {
-						owner = c:DEN
-						owner = {
-							is_subject_of = c:DEN
-						}
-						NOT = {
-							owner = {
-								OR = {
-									country_has_primary_culture = cu:north_german
-									country_has_primary_culture = cu:south_german
-								}
-							}
-						}
+		s:STATE_SCHLESWIG_HOLSTEIN = {
+			any_scope_state = {
+				OR = {
+					owner = c:DEN
+					owner = {
+						is_subject_of = c:DEN
 					}
 				}
 			}
@@ -238,19 +186,13 @@ trigger_prussia_danish_war = {
 		c:PRU = {
 			create_diplomatic_play = {
 				name = dp_liberate_subject
-				target_country = c:DEN
+				target_country = c:HOL
 				war = no
 				type = dp_liberate_subject
 				
 				add_war_goal = {
 					holder = c:PRU
 					type = liberate_subject
-					target_country = c:HOL
-				}
-				
-				add_war_goal = {
-					holder = c:PRU
-					type = transfer_subject
 					target_country = c:SCH
 				}
 			}

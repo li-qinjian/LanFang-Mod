@@ -12,8 +12,8 @@
  lan_move_chinese_to_capital: "召回南洋华人"
  lan_move_chinese_to_capital_desc: "将境外的南洋的华人召回首都地区，以增强我们的经济和文化实力。"
  move_chineses_tt: "所有南洋华人会迁移到我们的首都地区"
- move_capital_from_split_states_tt: "将首都从分裂的州迁出"
- move_capital_from_split_states_desc: "我们终于完全掌控了一个行省，是时候将首都迁出分裂的州了。"
+ move_capital_from_split_state: "将首都从分裂的州迁出"
+ move_capital_from_split_state_desc: "我们终于完全掌控了一个行省，是时候将首都迁出分裂的州了。"
 
  # 事件1 - 下南洋
  nanyang_migration.1.t:0 "招募华人移民"
