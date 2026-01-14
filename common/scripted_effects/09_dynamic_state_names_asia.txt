@@ -1,0 +1,34 @@
+﻿### Culture name assignments
+## China
+assign_state_name_region_south_china = {
+    if = {
+        limit = {
+            state_region = {
+                s:STATE_SHAOZHOU ?= this
+            }
+        }
+        STATE_SHAOZHOU_state_name_assign = yes
+    }
+}
+
+
+# Shaozhou
+STATE_SHAOZHOU_state_name_assign = {
+    if = { # Non-Han Split State
+        limit = {
+            is_split_state = yes
+            owner = {
+                NOT = {
+                    any_primary_culture = {
+                        cu:han ?= this
+                    }
+                }
+            }
+        }
+        set_state_name = STATE_HONGKONG
+    }
+    else = { # By putting an else at the end that resets the names we ensure that the names are switched back to their defaults if anyone else takes the states
+        reset_state_name = yes
+        reset_hub_names = yes
+    }
+}

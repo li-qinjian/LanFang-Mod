@@ -10,17 +10,12 @@
 	possible = {
 		c:LAN ?= ROOT
 		owns_entire_state_region = STATE_MALAYA
-		s:STATE_MALAYA = {
-			any_scope_culture = {
-				is_primary_culture_of = ROOT
-			}
-			average_sol > 10
-		}
 	}
 
 	when_taken = {
 		#set_variable = moved_capital_to_malaya
 		set_capital = STATE_MALAYA
+		set_state_type = incorporated
 	}
 
 	ai_chance = {
@@ -31,6 +26,15 @@
 lan_move_chinese_to_capital = {
 	is_shown = {
 		c:LAN ?= ROOT
+			any_scope_state = {
+			is_incorporated = no
+			is_split_state = yes
+			any_scope_pop = {
+				culture = {
+					has_discrimination_trait = heritage_han
+				}
+			}
+		}
 	}
 
 	possible = {
@@ -89,11 +93,176 @@ ban_opium = {
 	}
 
 	when_taken = {
-		add_banned_goods = g:opium
+		#add_banned_goods = g:opium
+		if = {
+			limit = {
+				exists = c:DEI
+				exists = c:SMB
+				c:SMB = {
+					is_subject_of = c:DEI
+				}
+			}
+			c:DEI = {
+				create_diplomatic_play = {
+					name = dp_annex_subject
+					target_country = c:SMB
+					war = no
+					type = dp_annex_subject
+
+					add_war_goal = {
+						holder = c:DEI
+						target_country = c:SMB
+						type = annex_country
+					}
+				}
+			}
+		}
 	}
 
     ai_chance = {
 		value = 0
     }
+}
+
+move_capital_from_split_state = {
+	is_shown = {
+		is_player = yes
+		capital = {
+			is_split_state = yes
+			NOT = { is_homeland_of_country_cultures = yes }
+		}
+	}
+
+	possible = {
+		any_scope_state = {
+			is_capital = no
+			is_split_state = no
+		}
+	}
+
+	when_taken = {
+		random_scope_state = {
+			limit = {
+				is_capital = no
+				is_split_state = no
+			}
+			position = 0
+			weight = {
+				value = 1
+				if = {
+					limit = { is_incorporated = yes }
+					add = 100
+				}
+			}
+			
+			save_scope_as = new_capital_state
+			
+			root = {
+				set_capital = scope:new_capital_state.state_region
+			}
+		}
+		
+		capital = {
+			set_state_type = incorporated
+		}
+	}
+
+	ai_chance = {
+		value = 0
+		
+		if = {
+			limit = {
+				capital = {
+					is_split_state = yes
+					turmoil >= 0.5
+				}
+			}
+			add = 50
+		}
+	}
+}
+
+trigger_prussia_danish_war = {
+	is_shown = {
+		is_player = yes
+		#game_date >= 1848.1.1
+		exists = c:PRU
+		exists = c:DEN
+		exists = c:HOL
+		exists = c:SCH
+		NOT = { has_global_variable = prussia_danish_war_triggered }
+		
+		custom_tooltip = {
+			text = prussia_danish_war_state_condition_tt
+			s:STATE_SCHLESWIG_HOLSTEIN = {
+				any_scope_state = {
+					OR = {
+						owner = c:DEN
+						owner = {
+							is_subject_of = c:DEN
+						}
+						NOT = {
+							owner = {
+								OR = {
+									country_has_primary_culture = cu:north_german
+									country_has_primary_culture = cu:south_german
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	possible = {
+		exists = c:PRU
+		exists = c:DEN
+		c:PRU = {
+			is_at_war = no
+			NOT = {
+				has_diplomatic_pact = {
+					who = c:DEN
+					type = alliance
+				}
+			}
+		}
+		c:DEN = {
+			is_at_war = no
+		}
+	}
+
+	when_taken = {
+		set_global_variable = prussia_danish_war_triggered
+		
+		c:PRU = {
+			create_diplomatic_play = {
+				name = dp_liberate_subject
+				target_country = c:DEN
+				war = no
+				type = dp_liberate_subject
+				
+				add_war_goal = {
+					holder = c:PRU
+					type = liberate_subject
+					target_country = c:HOL
+				}
+				
+				add_war_goal = {
+					holder = c:PRU
+					type = transfer_subject
+					target_country = c:SCH
+				}
+			}
+		}
+		
+		custom_tooltip = {
+			text = prussia_danish_war_triggered_tt
+		}
+	}
+
+	ai_chance = {
+		value = 0
+	}
 }
 

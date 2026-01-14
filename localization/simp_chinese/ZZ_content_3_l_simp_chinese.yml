@@ -12,7 +12,9 @@
  lan_move_chinese_to_capital: "召回南洋华人"
  lan_move_chinese_to_capital_desc: "将境外的南洋的华人召回首都地区，以增强我们的经济和文化实力。"
  move_chineses_tt: "所有南洋华人会迁移到我们的首都地区"
- 
+ move_capital_from_split_states_tt: "将首都从分裂的州迁出"
+ move_capital_from_split_states_desc: "我们终于完全掌控了一个行省，是时候将首都迁出分裂的州了。"
+
  # 事件1 - 下南洋
  nanyang_migration.1.t:0 "招募华人移民"
  nanyang_migration.1.d:0 "在[SCOPE.sCountry('han_country').GetName]的[SCOPE.sState('han_source_state').GetName]，大量华人因失业而陷入困境。我们正在寻求劳动力发展国家，是否应该招募这些勤劳的华人同胞前来定居？"
@@ -65,3 +67,8 @@
 
  ss_migration_attraction: "来到南洋"
  lanfang_migration: "南洋移民"
+ # 普鲁士-丹麦战争决议
+ trigger_prussia_danish_war: "促成石勒苏益格-荷尔斯泰因危机"
+ trigger_prussia_danish_war_desc: "石勒苏益格和荷尔斯泰因两个公国长期处于丹麦统治之下，但其中有大量德意志人居住。普鲁士作为德意志诸邦的领导者，一直寻求解放这些德意志同胞。我们可以促使普鲁士对丹麦采取行动，要求解放这两个公国。"
+ prussia_danish_war_triggered_tt: "普鲁士将对丹麦发起外交博弈，要求解放石勒苏益格-荷尔斯泰因"
+ prussia_danish_war_state_condition_tt: "石勒苏益格-荷尔斯泰因地区至少部分由丹麦或其附庸控制，或未被德意志国家控制"

@@ -19,3 +19,14 @@ REPLACE:CHI = {
 	cultures = { han }
 	capital = STATE_BEIJING
 }
+
+REPLACE:BRZ = {
+	color = hsv360{ 143  75  61 }
+
+	country_type = recognized
+
+	tier = kingdom
+
+	cultures = { brazilian }
+	capital = STATE_RIO_DE_JANEIRO
+}
