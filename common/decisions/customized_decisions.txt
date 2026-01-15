@@ -144,23 +144,10 @@ move_capital_from_split_state = {
 		value = 0
 	}
 }
-
 trigger_prussia_danish_war = {
 	is_shown = {
 		is_player = yes
 		#game_date >= 1848.1.1
-		NOT = { has_global_variable = prussia_danish_war_triggered }
-		
-		s:STATE_SCHLESWIG_HOLSTEIN = {
-			any_scope_state = {
-				OR = {
-					owner = c:DEN
-					owner = {
-						is_subject_of = c:DEN
-					}
-				}
-			}
-		}
 	}
 
 	possible = {
@@ -181,25 +168,18 @@ trigger_prussia_danish_war = {
 	}
 
 	when_taken = {
-		set_global_variable = prussia_danish_war_triggered
-		
 		c:PRU = {
 			create_diplomatic_play = {
-				name = dp_liberate_subject
-				target_country = c:HOL
-				war = no
+				name = liberate_subject
+				target_country = c:SCH
 				type = dp_liberate_subject
 				
 				add_war_goal = {
 					holder = c:PRU
-					type = liberate_subject
-					target_country = c:SCH
+					type = annex_country
+					target_country = c:HOL
 				}
 			}
-		}
-		
-		custom_tooltip = {
-			text = prussia_danish_war_triggered_tt
 		}
 	}
 
