@@ -94,19 +94,23 @@ ban_opium = {
 
 	when_taken = {
 		#add_banned_goods = g:opium
-		if = {
-			limit = {
-				exists = c:DEI
-				exists = c:SMB
-				c:SMB = {
-					is_subject_of = c:DEI
+		c:DEI = {
+			random_subject_or_below = {
+				limit = { 
+					is_subject_type = subject_type_puppet
+					liberty_desire < 25
+					num_states <= 1
+					any_scope_state = {
+						is_split_state = yes
+					}
 				}
+				save_scope_as = dei_annexation_target
 			}
-			c:DEI = {
+			if = {
+				limit = { exists = scope:dei_annexation_target }
 				create_diplomatic_play = {
 					name = dp_annex_subject
-					target_country = c:SMB
-					war = no
+					target_country = scope:dei_annexation_target
 					type = dp_annex_subject
 				}
 			}
@@ -123,7 +127,6 @@ move_capital_from_split_state = {
 		is_player = yes
 		capital = {
 			is_split_state = yes
-			#NOT = { is_homeland_of_country_cultures = yes }
 		}
 	}
 
@@ -144,6 +147,7 @@ move_capital_from_split_state = {
 		value = 0
 	}
 }
+
 trigger_prussia_danish_war = {
 	is_shown = {
 		is_player = yes
@@ -153,6 +157,7 @@ trigger_prussia_danish_war = {
 	possible = {
 		exists = c:PRU
 		exists = c:DEN
+		exists = c:AUS
 		c:PRU = {
 			is_at_war = no
 			NOT = {
@@ -174,11 +179,32 @@ trigger_prussia_danish_war = {
 				target_country = c:SCH
 				type = dp_liberate_subject
 				
+				add_initiator_backers = { c:AUS }
+				
 				add_war_goal = {
 					holder = c:PRU
 					type = annex_country
 					target_country = c:HOL
 				}
+			}
+		}
+		
+		if = {
+			limit = {
+				exists = c:AUS
+				c:AUS = {
+					has_diplomatic_pact = {
+						who = c:PRU
+						type = military_access
+					}
+				}
+			}
+			random_diplomatic_play = {
+				limit = {
+					#target = { c:DEN ?= this }
+					initiator = { c:PRU ?= this }
+				}
+				add_initiator_backers = { c:HAN }
 			}
 		}
 	}
@@ -187,4 +213,3 @@ trigger_prussia_danish_war = {
 		value = 0
 	}
 }
-

@@ -1,0 +1,29 @@
+﻿### Regencies are split off into government_types/01_regencies
+
+gov_duhufu = {
+	transfer_of_power = hereditary
+
+	male_ruler = "RULER_TITLE_GRAND_GENERAL"
+	female_ruler = "RULER_TITLE_GRAND_GENERAL"
+
+	male_heir = "RULER_TITLE_HEIR_GENERAL"
+	female_heir = "RULER_TITLE_HEIR_GENERAL"
+
+	possible = {
+		exists = c:LAN
+		c:LAN = ROOT
+		OR = {
+			has_law = law_type:law_monarchy
+			has_law_or_variant = law_type:law_parliamentary_republic
+		}
+		country_has_voting_franchise = yes
+		has_gov_regency = no
+	}
+
+	on_government_type_change = {
+		change_to_hereditary = yes
+	}
+	on_post_government_type_change = {
+		post_change_to_hereditary = yes
+	}
+}

@@ -1,0 +1,9 @@
+﻿l_simp_chinese:
+ 
+ gov_duhufu: "都护府"
+ gov_duhufu_desc: "这种[concept_government_type]下，[Concept('concept_ruler','$RULER_TITLE_GRAND_GENERAL$')]是[concept_head_of_state]，但[Concept('concept_votes','$concept_voting$')]和宪法决定了[Concept('concept_law','$concept_laws$')]。\n\n$TRANSFER_OF_POWER_NAME_DESC$"
+
+ #Titles
+ RULER_TITLE_GRAND_GENERAL: "大将军"
+ RULER_TITLE_HEIR_GENERAL: "世子"
+ 
