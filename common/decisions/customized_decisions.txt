@@ -15,7 +15,7 @@
 	when_taken = {
 		#set_variable = moved_capital_to_malaya
 		set_capital = STATE_MALAYA
-		set_state_type = incorporated
+		#set_state_type = incorporated
 	}
 
 	ai_chance = {
@@ -23,57 +23,6 @@
 	}
 }
 
-lan_move_chinese_to_capital = {
-	is_shown = {
-		c:LAN ?= ROOT
-			any_scope_state = {
-			is_incorporated = no
-			is_split_state = yes
-			any_scope_pop = {
-				culture = {
-					has_discrimination_trait = heritage_han
-				}
-			}
-		}
-	}
-
-	possible = {
-		c:LAN ?= ROOT
-		any_scope_state = {
-			is_incorporated = no
-			is_split_state = yes
-			any_scope_pop = {
-				culture = {
-					has_discrimination_trait = heritage_han
-				}
-			}
-		}
-	}
-
-	when_taken = {
-		every_scope_state = {
-			limit = {
-				is_incorporated = no
-				is_split_state = yes
-			}
-			every_scope_pop = {
-				limit = {
-					culture = {
-						has_discrimination_trait = heritage_han
-					}
-				}
-				custom_tooltip = {
-					text = move_chineses_tt
-					move_pop = root.capital
-				}
-			}
-		}
-	}
-
-	ai_chance = {
-		value = 0
-	}
-}
 
 ban_opium = {
 	is_shown = {
@@ -94,26 +43,21 @@ ban_opium = {
 
 	when_taken = {
 		#add_banned_goods = g:opium
-		c:DEI = {
-			random_subject_or_below = {
-				limit = { 
-					is_subject_type = subject_type_puppet
-					liberty_desire < 25
-					num_states <= 1
-					any_scope_state = {
-						is_split_state = yes
-					}
-				}
-				save_scope_as = dei_annexation_target
-			}
-			if = {
-				limit = { exists = scope:dei_annexation_target }
-				create_diplomatic_play = {
-					name = dp_annex_subject
-					target_country = scope:dei_annexation_target
-					type = dp_annex_subject
+
+		random_character = {
+			limit = {
+				owner = root
+				is_ruler = no
+				has_trait = cautious
+				is_general = yes
+				#culture = cu:han
+				OR = {
+					has_trait = psychological_affliction
+					has_trait = shellshocked
 				}
 			}
+			remove_trait = shellshocked
+			remove_trait = psychological_affliction
 		}
 	}
 
@@ -151,7 +95,7 @@ move_capital_from_split_state = {
 trigger_prussia_danish_war = {
 	is_shown = {
 		is_player = yes
-		#game_date >= 1848.1.1
+		game_date >= 1848.1.1
 	}
 
 	possible = {
@@ -186,25 +130,6 @@ trigger_prussia_danish_war = {
 					type = annex_country
 					target_country = c:HOL
 				}
-			}
-		}
-		
-		if = {
-			limit = {
-				exists = c:AUS
-				c:AUS = {
-					has_diplomatic_pact = {
-						who = c:PRU
-						type = military_access
-					}
-				}
-			}
-			random_diplomatic_play = {
-				limit = {
-					#target = { c:DEN ?= this }
-					initiator = { c:PRU ?= this }
-				}
-				add_initiator_backers = { c:HAN }
 			}
 		}
 	}
