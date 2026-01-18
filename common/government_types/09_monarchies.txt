@@ -12,10 +12,7 @@ gov_duhufu = {
 	possible = {
 		exists = c:LAN
 		c:LAN = ROOT
-		OR = {
-			has_law = law_type:law_monarchy
-			has_law_or_variant = law_type:law_parliamentary_republic
-		}
+		has_law = law_type:law_monarchy
 		country_has_voting_franchise = yes
 		has_gov_regency = no
 	}

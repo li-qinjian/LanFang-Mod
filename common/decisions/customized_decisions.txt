@@ -69,22 +69,25 @@ ban_opium = {
 move_capital_from_split_state = {
 	is_shown = {
 		is_player = yes
-		capital = {
-			is_split_state = yes
+		#capital = {
+		#	is_split_state = yes
+		#}
+		NOT = {
+			capital = { state_region = s:STATE_WEST_BORNEO }
 		}
 	}
 
 	possible = {
 		c:LAN ?= ROOT
-		owns_entire_state_region = STATE_NORTH_BORNEO
+		owns_entire_state_region = STATE_WEST_BORNEO
 	}
 
 	when_taken = {
-		set_capital = STATE_NORTH_BORNEO
+		set_capital = STATE_WEST_BORNEO
 		
-		capital = {
-			set_state_type = incorporated
-		}
+		#capital = {
+		#	set_state_type = incorporated
+		#}
 	}
 
 	ai_chance = {
